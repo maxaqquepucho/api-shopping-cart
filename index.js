@@ -12,13 +12,13 @@ const { sequelize } = require('./src/db')
 sequelize
   .authenticate()
   .then(() => {
-    console.log('Connection has been established successfully.');
+    console.log('Connection has been established successfully.')
   })
   .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+    console.error('Unable to connect to the database:', err)
+  })
 
-//----------------------------------------------------------
+// ----------------------------------------------------------
 const app = express()
 const port = process.env.PORT || 5000
 
@@ -29,7 +29,6 @@ const typeDefs = readFileSync(
 
 // definiendo el esquema
 const schema = makeExecutableSchema({ typeDefs, resolvers })
-
 
 app.use('/api', gqlMiddleware({
   schema,
