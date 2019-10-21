@@ -1,8 +1,9 @@
 
 type Product {
-    id: ID!,
-    name: String!,
+    id: ID!
+    name: String!
     price: Float!
+    store: Int!
 }
 
 type Query {
@@ -10,12 +11,14 @@ type Query {
     getProducts: [Product]
     "Devuelve un producto"
     getProduct(id: ID!): Product
+    "Buscar productos"
+    findProducts(name: String!): [Product]
 }
 
-input ProductInput {   
-    
+input ProductInput {
     name: String!
     price: Float!
+    store: Int!
 }
 
 type Mutation {
