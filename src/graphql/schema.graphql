@@ -6,13 +6,27 @@ type Product {
     store: Int!
 }
 
+type OrderProduct {
+    id: ID!
+    orderProduct: String
+    productsCount: Int!
+    productsCost: Float! 
+    shippingCost: Float! 
+    taxes: Float! 
+    total: Float! 
+    productId: Int!
+    deleveryDate: String! 
+}
+
 type Query {
     "Trae todos los Productos"
     getProducts: [Product]
     "Devuelve un producto"
     getProduct(id: ID!): Product
     "Buscar productos"
-    findProducts(name: String!): [Product]
+    findProducts(name: String!): [Product]    
+    "Traer todos todas las ordenes"
+    getOrderProducts: [OrderProduct]
 }
 
 input ProductInput {
@@ -21,7 +35,21 @@ input ProductInput {
     store: Int!
 }
 
+"Agregar orden para el envio del producto"
+input OrderProductInput {
+    #orderProduct: String
+    productsCount: Int!
+    productsCost: Float! 
+    shippingCost: Float! 
+    taxes: Float! 
+    total: Float! 
+    productId: Int!
+    deleveryDate: String! 
+}
+
 type Mutation {
     "Crea un producto"
     createProduct(input: ProductInput!): Product
+    "Crea una nueva orden"
+    createOrderProduct(input: OrderProductInput): OrderProduct
 }
