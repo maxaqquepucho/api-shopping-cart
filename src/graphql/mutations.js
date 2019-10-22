@@ -13,6 +13,8 @@ module.exports = {
   },
   createOrderProduct: async (root, { input }) => {
     try {
+      console.log('not coming?',input);
+      
       const orderProduct = await OrderProducts.create(input)
       return orderProduct.get({ plain: true })
     } catch (error) {

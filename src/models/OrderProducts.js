@@ -44,7 +44,7 @@ const OrderProducts = sequelize.define('orderProducts', {
     },
     productId: {
         type: Sequelize.INTEGER,
-        // allowNull: false
+        allowNull: false
     },
     deleveryDate: {
         type: Sequelize.DATE,

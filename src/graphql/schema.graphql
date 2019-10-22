@@ -9,8 +9,8 @@ type Product {
 type OrderProduct {
     id: ID!
     orderProduct: String
-    productsCount: Int!
-    productsCost: Float! 
+    productsCount: Int
+    productsCost: Float
     shippingCost: Float! 
     taxes: Float! 
     total: Float! 
@@ -37,13 +37,13 @@ input ProductInput {
 
 "Agregar orden para el envio del producto"
 input OrderProductInput {
-    #orderProduct: String
+    # orderProduct: String
     productsCount: Int!
     productsCost: Float! 
     shippingCost: Float! 
     taxes: Float! 
     total: Float! 
-    productId: Int!
+    productId: Int
     deleveryDate: String! 
 }
 
