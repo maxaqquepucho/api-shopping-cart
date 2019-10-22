@@ -3,7 +3,7 @@ type Product {
     id: ID!
     name: String!
     price: Float!
-    store: Int!
+    img: String
 }
 
 type OrderProduct {
@@ -32,7 +32,7 @@ type Query {
 input ProductInput {
     name: String!
     price: Float!
-    store: Int!
+    img: String!
 }
 
 "Agregar orden para el envio del producto"

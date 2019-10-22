@@ -13,8 +13,8 @@ const Products = sequelize.define('products', {
   price: {
     type: Sequelize.DOUBLE
   },
-  store: {
-    type: Sequelize.INTEGER
+  img: {
+    type: Sequelize.TEXT
   }
 }, {
   timestamps: false

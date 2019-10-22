@@ -54,8 +54,8 @@ const OrderProducts = sequelize.define('orderProducts', {
     timestamps: false
 })
 
-OrderProducts.hasMany(Products, { foreignKey: 'productId', sourceKey: 'id' })
-Products.belongsTo(OrderProducts, { foreignKey: 'productId', sourceKey: 'id' })
+// OrderProducts.hasMany(Products, { foreignKey: 'productId', sourceKey: 'id' })
+// Products.belongsTo(OrderProducts, { foreignKey: 'productId', sourceKey: 'id' })
 
 module.exports = {
     OrderProducts
